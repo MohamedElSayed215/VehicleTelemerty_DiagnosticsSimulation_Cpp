@@ -1,6 +1,6 @@
 #include "ECU.hpp"
 #include "Sensors.hpp"
-void ECU::Adaptive_Cruise_Control()
+ void ECU::Adaptive_Cruise_Control()
 {
     if (TemperatureSensor::Get_Readings()>=100)
     {   

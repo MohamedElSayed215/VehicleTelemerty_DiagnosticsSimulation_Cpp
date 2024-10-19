@@ -1,9 +1,7 @@
 #include "Daignostics.hpp"
-#include "Sensors.hpp"
-#include <iostream>
 void Daignostics::Display_Issues()
 {
-    if(! static_cast<int>(BatterySensor::Get_Battery_Level()) )
+    if( BatterySensor::Get_Battery_Level()<=50 )
     {   
         std::cout<<"Battery Level is Low ! \n" ; 
     }
@@ -11,13 +9,13 @@ void Daignostics::Display_Issues()
     {
         std::cout<<"Some Object is Detected ! .. Reduce your Speed !\n"; 
     }
-    if(TemperatureSensor::Get_Readings()>=120)
+    if(TemperatureSensor::Get_Readings()>=50)
     {
         std::cout<<"There is overheating in Engine ! \n" ; 
     }
-    if(BatterySensor::Get_Readings()>=100)
+    if(BatterySensor::Get_Readings()>=60)
     {
-        std::cout<<"Battery Temperature is Arrived up to 100 !   \n";
+        std::cout<<"Battery Temperature is Arrived up to 60 !   \n";
     }
     
     

@@ -6,17 +6,17 @@ SpeedSensor::SpeedSensor()
 }
 BatterySensor::BatterySensor()
 {
-    Battery_Temperatrue=GetRandomValues(0, 500) ; 
-    BatteryLevel=static_cast<Level>(GetRandomValues(static_cast<int>(Level::LOW), static_cast<int>(Level::HIGH)) ); 
+    Battery_Temperatrue=GetRandomValues(0, 120) ; 
+    BatteryLevel=GetRandomValues(0, 100); 
 }
 RadarSensor::RadarSensor()
 {
-    Distance = GetRandomValues(0, 400) ; 
-    (Distance>=20)? Object_Detection=false:true  ; 
+    Distance = GetRandomValues(0, 100) ; 
+    (Distance>=50)? Object_Detection=false:true  ; 
 }
 TemperatureSensor::TemperatureSensor()
 {
-    Engine_Temperature = GetRandomValues(0, 500) ; 
+    Engine_Temperature = GetRandomValues(0, 120) ; 
 }
 float SpeedSensor::Get_Readings()
 {
@@ -38,7 +38,7 @@ bool RadarSensor::Get_Object_Detection()
 {
     return Object_Detection;
 }
-Level BatterySensor::Get_Battery_Level()
+float BatterySensor::Get_Battery_Level()
 {
     return BatteryLevel;
 }
@@ -49,7 +49,7 @@ void SpeedSensor::Set_Simulated_Value(float s)
 void RadarSensor::Set_Simulated_Value(float d)
 {
     Distance= d ;
-    (Distance>=20)? Object_Detection=false:true  ; 
+    (Distance>=50)? Object_Detection=false:true  ; 
 
 }
 void RadarSensor::Set_Status_Detection(bool status) 
@@ -66,7 +66,7 @@ void BatterySensor::Set_Simulated_Value(float t )
     Battery_Temperatrue = t ; 
 
 }
-void BatterySensor::Set_Battery_Level(Level l )
+void BatterySensor::Set_Battery_Level(float l  )
 {
     BatteryLevel = l ; 
 }

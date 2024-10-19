@@ -57,13 +57,13 @@ class BatterySensor : public Sensor
 {
     private : 
         float Battery_Temperatrue ; 
-        Level BatteryLevel ;
+        int BatteryLevel ;
         
     public :
         float Get_Readings() ;
         void Set_Simulated_Value(float) ; 
-        void Set_Battery_Level(Level) ;
-        Level Get_Battery_Level() ; 
+        void Set_Battery_Level(float) ;
+        float Get_Battery_Level() ; 
         BatterySensor();     
 };
 

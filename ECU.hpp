@@ -4,5 +4,5 @@
 class ECU : protected RadarSensor , protected TemperatureSensor , protected SpeedSensor , protected BatterySensor
 {            
     public: 
-        void Adaptive_Cruise_Control() ; 
+        virtual void Adaptive_Cruise_Control() ; 
 } ; 
